@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script type="template/handlebars" id="hb-template">
+      {{#each redditPost}}
+        <div class="post">
+          <h2>{{data.score}} <a href='{{data.url}}'>{{data.title}}</a></h2>
+          <p>Comments: {{data.num_comments}}</p>
+          {{#if data.archived}}
+            <p>Archived</p>
+          {{else}}
+            <p>Not Archived</p>
+          {{/if}}
+        </div>
+      {{/each}}
+    </script>
+
+    <input type="text" id="subredditBox"></input>
+    <input type="submit" onClick="getSubreddits()"></input>
+    <div id="post">
+
+    </div>
+    <script src="jquery-3.1.0.js"></script>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
